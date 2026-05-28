@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jollof & Jerk — Washington DC</title>
+<meta name="description" content="West African jollof meets Caribbean jerk. Restaurant & late-night spot at 2020 9th St NW, Washington DC. Owner & Chef: Mamadou Bah. As seen on ABC 7 News / Good Morning Washington. Open till 3AM daily, 4AM Fri & Sat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#080C07;
+  --surface:#0D1409;
+  --card:#131A0E;
+  --text:#F2EAD5;
+  --muted:#7A7260;
+  --faint:#2A2620;
+  --red:#C4341A;
+  --red-light:#D94A28;
+  --green:#1A5C2E;
+  --green-text:#4DBB72;
+  --gold:#C8921A;
+  --gold-light:#DFA825;
+  --border:rgba(196,52,26,.14);
+  --border-gold:rgba(200,146,26,.18);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',-apple-system,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;z-index:200;padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .3s;}
+nav.scrolled{background:rgba(8,12,7,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;font-style:italic;color:var(--red);text-decoration:none;}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.72rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;transition:color .2s;}
+.nav-links a:hover{color:var(--text);}
+.nav-cta{background:var(--red) !important;color:#F2EAD5 !important;padding:.42rem 1.1rem !important;border-radius:2px;font-weight:500 !important;}
+.nav-cta:hover{background:var(--red-light) !important;}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--text);}
+
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2rem 4.5rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 62% 28%,#2D0B04 0%,#0D1208 45%,#080C07 100%);z-index:0;}
+.hero-glow-r{position:absolute;top:8%;right:4%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(196,52,26,.22) 0%,transparent 70%);filter:blur(28px);z-index:0;}
+.hero-glow-g{position:absolute;bottom:22%;left:3%;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(26,92,46,.16) 0%,transparent 70%);filter:blur(20px);z-index:0;}
+.hero-glow-gold{position:absolute;top:55%;right:15%;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(200,146,26,.1) 0%,transparent 70%);filter:blur(16px);z-index:0;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,7,.15) 0%,rgba(8,12,7,.6) 50%,var(--bg) 100%);z-index:1;}
+.hero-content{position:relative;z-index:2;max-width:740px;}
+.live-badge{display:inline-flex;align-items:center;gap:.55rem;padding:.3rem .9rem;border-radius:100px;font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.75rem;transition:all .3s;}
+.live-dot{width:6px;height:6px;border-radius:50%;animation:pulse 2.2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.75);}}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(3.4rem,11vw,7rem);line-height:.96;font-weight:900;letter-spacing:-.01em;color:var(--text);margin-bottom:1.4rem;}
+.hero-h1 em{color:var(--red);font-style:italic;}
+.hero-tagline{font-size:1rem;color:var(--muted);font-weight:300;max-width:460px;margin-bottom:.75rem;line-height:1.8;}
+.hero-origin{font-family:'Playfair Display',serif;font-style:italic;font-size:.9rem;color:var(--gold);margin-bottom:2.25rem;opacity:.85;}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn-primary{background:var(--red);color:#F2EAD5;padding:.85rem 1.8rem;font-weight:500;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s,transform .15s;}
+.btn-primary:hover{background:var(--red-light);transform:translateY(-1px);}
+.btn-outline{background:transparent;color:var(--text);padding:.85rem 1.8rem;font-weight:400;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(242,234,213,.2);border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;}
+.btn-outline:hover{border-color:var(--red);color:var(--red);}
+.hero-strip{position:relative;z-index:2;margin-top:3.5rem;padding-top:1.75rem;border-top:1px solid var(--border);display:flex;gap:3rem;flex-wrap:wrap;}
+.strip-label{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--faint);display:block;margin-bottom:.22rem;}
+.strip-val{font-size:.88rem;color:var(--text);}
+
+/* ── SHARED ── */
+section{padding:5.5rem 2rem;}
+.s-label{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red);display:block;margin-bottom:.8rem;}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(2.1rem,5vw,3.1rem);line-height:1.05;font-weight:900;margin-bottom:1rem;}
+.s-sub{font-size:.93rem;color:var(--muted);max-width:480px;line-height:1.8;}
+
+/* ── LOCATION / INFO ── */
+#location{background:var(--surface);}
+.loc-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:2.5rem;margin-top:3rem;align-items:start;}
+.map-embed{aspect-ratio:4/3;border-radius:3px;overflow:hidden;border:1px solid var(--border);}
+.map-embed iframe{width:100%;height:100%;border:none;filter:grayscale(60%) invert(1) hue-rotate(180deg);opacity:.85;}
+.loc-info{display:flex;flex-direction:column;gap:1.5rem;}
+.loc-card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1.6rem;}
+.status-badge{display:inline-flex;align-items:center;gap:.45rem;padding:.26rem .72rem;border-radius:100px;font-size:.63rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.9rem;transition:all .3s;}
+.loc-address-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;line-height:1.3;margin-bottom:.3rem;}
+.loc-neighborhood{font-size:.8rem;color:var(--muted);margin-bottom:1.2rem;}
+.hours-grid{border-top:1px solid var(--border);padding-top:1.1rem;display:flex;flex-direction:column;gap:.4rem;}
+.hr-row{display:flex;justify-content:space-between;font-size:.8rem;}
+.hr-day{color:var(--muted);}
+.hr-time{color:var(--text);}
+.hr-special{color:var(--gold);font-size:.7rem;margin-left:.4rem;}
+.contact-row{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.5rem;}
+.contact-chip{font-size:.75rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:.3rem .7rem;border-radius:2px;transition:color .2s,border-color .2s;}
+.contact-chip:hover{color:var(--red);border-color:var(--border-gold);}
+
+/* ── FLASH DEAL ── */
+#flash{background:var(--bg);padding:2.5rem 2rem;}
+.flash-inner{background:linear-gradient(135deg,rgba(196,52,26,.08) 0%,rgba(200,146,26,.06) 100%);border:1px solid var(--border-gold);border-radius:4px;padding:2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.flash-left{flex:1;}
+.flash-eyebrow{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:.5rem;}
+.flash-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;line-height:1.2;margin-bottom:.6rem;}
+.flash-desc{font-size:.85rem;color:var(--muted);line-height:1.7;max-width:460px;}
+.flash-origin{font-family:'Playfair Display',serif;font-style:italic;font-size:.82rem;color:var(--gold);margin-top:.6rem;opacity:.9;}
+.flash-cta{flex-shrink:0;}
+.flash-timer{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.06em;color:var(--red);line-height:1;}
+.flash-timer-label{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.2rem;}
+
+/* ── MENU ── */
+#menu{background:var(--surface);}
+.menu-note{display:inline-flex;align-items:center;gap:.5rem;background:rgba(200,146,26,.08);border:1px solid rgba(200,146,26,.2);color:var(--gold);padding:.3rem .8rem;border-radius:2px;font-size:.72rem;margin-top:.75rem;margin-bottom:-.5rem;}
+.menu-tabs{display:flex;margin:2.5rem 0 0;border-bottom:1px solid var(--border);}
+.tab{padding:.68rem 1.4rem;font-size:.72rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);cursor:pointer;border:none;background:none;position:relative;transition:color .2s;}
+.tab.active{color:var(--red);}
+.tab.active::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--red);}
+.menu-list{margin-top:.5rem;}
+.menu-item{display:flex;align-items:flex-start;justify-content:space-between;padding:1.3rem 0;border-bottom:1px solid var(--border);gap:1.25rem;}
+.menu-item:last-child{border-bottom:none;}
+.mi-info{flex:1;}
+.mi-name{font-family:'Playfair Display',serif;font-size:.97rem;font-weight:700;color:var(--text);margin-bottom:.25rem;}
+.mi-desc{font-size:.8rem;color:var(--muted);line-height:1.55;margin-bottom:.3rem;}
+.mi-origin{font-family:'Playfair Display',serif;font-style:italic;font-size:.75rem;color:var(--gold);opacity:.8;}
+.mi-tag{display:inline-block;padding:.1rem .42rem;background:rgba(196,52,26,.12);border:1px solid rgba(196,52,26,.22);color:#E06045;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;margin-left:.45rem;vertical-align:middle;font-family:'DM Sans',sans-serif;}
+.mi-right{display:flex;flex-direction:column;align-items:flex-end;gap:.4rem;flex-shrink:0;}
+.mi-price{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.04em;color:var(--gold);}
+.mi-sides{font-size:.62rem;color:var(--green-text);text-transform:uppercase;letter-spacing:.06em;}
+.add-btn{background:var(--red);color:#F2EAD5;border:none;padding:.3rem .7rem;font-size:.65rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border-radius:2px;cursor:pointer;white-space:nowrap;transition:background .2s;}
+.add-btn:hover{background:var(--red-light);}
+
+/* ── ORDER ── */
+#order{background:var(--bg);}
+.order-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem;align-items:start;}
+.order-steps{list-style:none;display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;}
+.o-step{display:flex;gap:1.1rem;align-items:flex-start;}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--red);opacity:.4;line-height:1.05;flex-shrink:0;width:2rem;}
+.step-body{font-size:.88rem;color:var(--muted);line-height:1.65;}
+.step-body strong{display:block;font-family:'Playfair Display',serif;color:var(--text);font-size:.94rem;margin-bottom:.18rem;}
+.order-form{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:2rem;}
+.form-title{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:.3rem;}
+.form-sub{font-size:.78rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6;}
+.f-field{margin-bottom:1.1rem;}
+.f-label{display:block;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.42rem;}
+.f-input,.f-select,.f-textarea{width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);padding:.7rem 1rem;font-size:.86rem;font-family:'DM Sans',sans-serif;border-radius:2px;outline:none;transition:border-color .2s;-webkit-appearance:none;}
+.f-input:focus,.f-select:focus,.f-textarea:focus{border-color:var(--red);}
+.f-input::placeholder,.f-textarea::placeholder{color:var(--faint);}
+.f-textarea{resize:vertical;min-height:90px;}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.f-note{font-size:.7rem;color:var(--faint);text-align:center;margin-top:.85rem;}
+
+/* ── CATERING ── */
+#catering{background:var(--surface);}
+.cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem;align-items:start;}
+.cat-points{list-style:none;display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;}
+.cat-point{display:flex;gap:1.1rem;align-items:flex-start;}
+.pt-num{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--red);opacity:.4;line-height:1.05;flex-shrink:0;width:2rem;}
+.pt-body{font-size:.88rem;color:var(--muted);line-height:1.65;}
+.pt-body strong{display:block;font-family:'Playfair Display',serif;color:var(--text);font-size:.94rem;margin-bottom:.18rem;}
+.cat-form{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:2rem;}
+
+/* ── STORY / SOCIAL ── */
+#story{background:var(--bg);}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem;align-items:center;}
+.story-pull{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-style:italic;line-height:1.2;color:var(--text);margin-bottom:1.5rem;}
+.story-pull em{color:var(--red);}
+.story-body{font-size:.9rem;color:var(--muted);line-height:1.85;}
+.story-body p+p{margin-top:1rem;}
+.story-platforms{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:2rem;}
+.plat-chip{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:.35rem .8rem;border-radius:2px;}
+.story-right{display:flex;flex-direction:column;gap:1.25rem;}
+.origin-card{background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1.4rem;}
+.origin-dish{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;margin-bottom:.35rem;}
+.origin-text{font-size:.8rem;color:var(--muted);line-height:1.6;}
+.origin-flag{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:.5rem;opacity:.85;}
+
+/* ── RENDEZVOUS BAR ── */
+#rendezvous{
+  background:#06080F;
+  position:relative;
+  overflow:hidden;
+  padding:6rem 2rem;
+}
+#rendezvous::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse at 80% 20%,rgba(58,42,12,.5) 0%,transparent 55%),
+    radial-gradient(ellipse at 15% 75%,rgba(20,30,60,.4) 0%,transparent 50%);
+  z-index:0;
+}
+.rnv-inner{position:relative;z-index:1;}
+.rnv-eyebrow{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#8A7A4A;display:block;margin-bottom:.8rem;}
+.rnv-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,6vw,4rem);font-weight:900;font-style:italic;line-height:.97;color:#EDE0C4;margin-bottom:.5rem;}
+.rnv-address{font-size:.8rem;letter-spacing:.1em;color:#4A4030;text-transform:uppercase;margin-bottom:1.5rem;}
+.rnv-sub{font-size:.95rem;color:#5A5040;max-width:460px;line-height:1.8;margin-bottom:3rem;}
+.rnv-divider{width:40px;height:1px;background:#8A7A4A;margin:1.5rem 0;opacity:.5;}
+.rnv-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;margin-bottom:3.5rem;}
+.rnv-photo{
+  aspect-ratio:3/4;
+  position:relative;
+  overflow:hidden;
+}
+.rnv-photo:first-child{border-radius:3px 0 0 3px;}
+.rnv-photo:last-child{border-radius:0 3px 3px 0;}
+.rnv-photo-bg{
+  width:100%;height:100%;
+  display:flex;align-items:flex-end;
+  padding:1rem;
+}
+.rnv-photo:nth-child(1) .rnv-photo-bg{background:radial-gradient(circle at 40% 30%,#1A1408 0%,#08090F 100%);}
+.rnv-photo:nth-child(2) .rnv-photo-bg{background:radial-gradient(circle at 60% 40%,#120E1A 0%,#060810 100%);}
+.rnv-photo:nth-child(3) .rnv-photo-bg{background:radial-gradient(circle at 50% 35%,#1A1206 0%,#080A06 100%);}
+.rnv-photo-label{font-size:.62rem;color:rgba(237,224,196,.2);font-style:italic;letter-spacing:.06em;}
+.rnv-features{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:560px;}
+.rnv-feature{border-left:2px solid rgba(138,122,74,.3);padding-left:1rem;}
+.rnv-feat-title{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:#EDE0C4;margin-bottom:.25rem;}
+.rnv-feat-desc{font-size:.78rem;color:#5A5040;line-height:1.6;}
+.rnv-cta-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:3rem;align-items:center;}
+.btn-bar{background:transparent;color:#EDE0C4;padding:.82rem 1.75rem;font-weight:400;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(138,122,74,.35);border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;}
+.btn-bar:hover{border-color:#8A7A4A;color:#C8B87A;}
+.btn-bar-fill{background:#8A7A4A;color:#08090F;padding:.82rem 1.75rem;font-weight:500;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s;}
+.btn-bar-fill:hover{background:#A09060;}
+.rnv-partner-note{font-size:.72rem;color:#352E22;margin-top:.75rem;font-style:italic;}
+
+/* ── ALERTS ── */
+#alerts{background:var(--surface);text-align:center;}
+.alerts-wrap{max-width:520px;margin:0 auto;}
+.alerts-h2{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,7vw,3.6rem);line-height:1.05;font-weight:900;margin-bottom:1rem;}
+.alerts-h2 em{color:var(--red);font-style:italic;}
+.alerts-sub{color:var(--muted);margin-bottom:2.25rem;line-height:1.8;font-size:.92rem;}
+.sms-row{display:flex;max-width:400px;margin:0 auto;}
+.sms-in{flex:1;background:var(--card);border:1px solid var(--border);border-right:none;color:var(--text);padding:.85rem 1.2rem;font-size:.86rem;font-family:'DM Sans',sans-serif;border-radius:2px 0 0 2px;outline:none;transition:border-color .2s;}
+.sms-in:focus{border-color:var(--red);}
+.sms-in::placeholder{color:var(--faint);}
+.sms-btn{background:var(--red);color:#F2EAD5;border:none;padding:.85rem 1.35rem;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:0 2px 2px 0;transition:background .2s;white-space:nowrap;}
+.sms-btn:hover{background:var(--red-light);}
+.sms-proof{font-size:.72rem;color:var(--faint);margin-top:1rem;}
+
+/* ── SOCIAL ── */
+#social{background:var(--bg);}
+.social-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;}
+.ig-link{font-size:.7rem;color:var(--red);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.ig-item{aspect-ratio:1;position:relative;overflow:hidden;cursor:pointer;}
+.ig-fill{width:100%;height:100%;transition:transform .35s;}
+.ig-item:hover .ig-fill{transform:scale(1.05);}
+.ig-item:hover img{transform:scale(1.05);}
+.ig-item:nth-child(1) .ig-fill{background:radial-gradient(circle at 45% 45%,#3A1408,#120503);}
+.ig-item:nth-child(2) .ig-fill{background:radial-gradient(circle at 55% 35%,#1A3010,#080C07);}
+.ig-item:nth-child(3) .ig-fill{background:radial-gradient(circle at 40% 55%,#3C1C08,#100703);}
+.ig-item:nth-child(4) .ig-fill{background:radial-gradient(circle at 60% 40%,#0F2A0C,#080C07);}
+.ig-item:nth-child(5) .ig-fill{background:radial-gradient(circle at 45% 50%,#421608,#130604);}
+.ig-item:nth-child(6) .ig-fill{background:radial-gradient(circle at 50% 45%,#1C3A12,#090D08);}
+.ig-overlay{position:absolute;inset:0;background:rgba(196,52,26,0);transition:background .25s;}
+.ig-item:hover .ig-overlay{background:rgba(196,52,26,.12);}
+.ig-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.62rem;color:rgba(255,255,255,.15);font-style:italic;}
+.ig-dish{position:absolute;bottom:0;left:0;right:0;padding:.55rem .7rem;background:linear-gradient(0deg,rgba(8,12,7,.9) 0%,transparent 100%);font-size:.68rem;color:rgba(242,234,213,.7);letter-spacing:.04em;font-family:'DM Sans',sans-serif;opacity:0;transition:opacity .25s;}
+.ig-item:hover .ig-dish{opacity:1;}
+.ig-item{text-decoration:none;}
+
+/* ── FOOTER ── */
+footer{background:var(--card);border-top:1px solid var(--border);padding:3.5rem 2rem 2rem;}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3.5rem;margin-bottom:3rem;}
+.ft-logo{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;font-style:italic;color:var(--red);display:block;margin-bottom:.7rem;}
+.ft-tagline{font-size:.85rem;color:var(--muted);line-height:1.7;}
+.ft-head{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.9rem;}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:.45rem;}
+.ft-links a{font-size:.82rem;color:var(--muted);text-decoration:none;transition:color .2s;}
+.ft-links a:hover{color:var(--red);}
+.ft-hrs{list-style:none;display:flex;flex-direction:column;gap:.4rem;}
+.ft-hr{font-size:.78rem;color:var(--muted);display:flex;justify-content:space-between;gap:1rem;}
+.ft-hr-note{font-size:.65rem;color:var(--gold);margin-left:.4rem;}
+.ft-bottom{padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.ft-copy{font-size:.7rem;color:var(--faint);}
+.ft-built{font-size:.7rem;color:var(--faint);}
+.ft-built span{color:var(--red);}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.rd1{transition-delay:.1s;}
+.rd2{transition-delay:.2s;}
+
+/* ── MOBILE NAV ── */
+.mobile-nav{display:none;position:fixed;inset:0;background:rgba(8,12,7,.97);backdrop-filter:blur(16px);z-index:190;flex-direction:column;align-items:center;justify-content:center;gap:1.75rem;}
+.mobile-nav.open{display:flex;}
+.mobile-nav a{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;font-style:italic;color:var(--text);text-decoration:none;transition:color .2s;}
+.mobile-nav a:hover{color:var(--red);}
+.m-close{position:absolute;top:1.4rem;right:1.75rem;background:none;border:none;color:var(--muted);font-size:1.5rem;cursor:pointer;}
+
+/* ── CART DRAWER ── */
+.cart-icon{position:fixed;bottom:2rem;right:2rem;background:var(--red);color:#F2EAD5;border:none;width:56px;height:56px;border-radius:50%;font-size:.75rem;font-weight:500;cursor:pointer;z-index:150;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;box-shadow:0 4px 24px rgba(196,52,26,.35);transition:transform .2s;}
+.cart-icon:hover{transform:scale(1.05);}
+.cart-count{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;line-height:1;}
+.cart-label{font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1000px){
+  .loc-grid,.order-grid,.cat-grid,.story-grid,.ft-grid,.rnv-grid-outer{grid-template-columns:1fr;}
+  #rendezvous > .rnv-inner > div{grid-template-columns:1fr;gap:3rem;}
+  .cat-grid,.story-grid,.order-grid{gap:3rem;}
+}
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  section{padding:3.75rem 1.25rem;}
+  #hero{padding:0 1.25rem 3.5rem;}
+  .hero-strip{gap:1.5rem;}
+  .f-row{grid-template-columns:1fr;}
+  .flash-inner{flex-direction:column;}
+  .ft-grid{grid-template-columns:1fr;gap:2rem;}
+  #flash{padding:2rem 1.25rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Jollof &amp; Jerk</a>
+  <ul class="nav-links">
+    <li><a href="#location">Find Us</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#order">Order</a></li>
+    <li><a href="#catering">Catering</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#rendezvous" style="color:#8A7A4A !important;">Rendezvous Bar</a></li>
+    <li><a href="#order" class="nav-cta">Order Now</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="m-close" id="mClose">✕</button>
+  <a href="#location" class="m-link">Find Us</a>
+  <a href="#menu" class="m-link">Menu</a>
+  <a href="#order" class="m-link">Order</a>
+  <a href="#catering" class="m-link">Catering</a>
+  <a href="#story" class="m-link">Our Story</a>
+  <a href="#rendezvous" class="m-link" style="color:#8A7A4A">Rendezvous Bar</a>
+  <a href="#order" class="m-link" style="color:var(--red)">Order Now</a>
+</div>
+
+<!-- CART BUTTON -->
+<button class="cart-icon" id="cartBtn" onclick="scrollToOrder()" aria-label="Order now">
+  <span class="cart-count" id="cartCount">0</span>
+  <span class="cart-label">Order</span>
+</button>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="assets/media/leslys-food-closeup-clip-web.gif"
+         alt="Jerk chicken and oxtail from Jollof &amp; Jerk — as seen on ABC 7 Good Morning Washington"
+         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.22;mix-blend-mode:lighten;">
+  </div>
+  <div class="hero-glow-r"></div>
+  <div class="hero-glow-g"></div>
+  <div class="hero-glow-gold"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="live-badge" id="heroBadge">
+      <span class="live-dot" id="heroDot"></span>
+      <span id="badgeText">Open Now</span>
+    </div>
+    <h1 class="hero-h1">Two<br>traditions.<br>One <em>plate.</em></h1>
+    <p class="hero-tagline">West African jollof meets Caribbean jerk — at 9th & Florida Ave, Washington DC. Open late, every night.</p>
+    <p class="hero-origin">Where the diaspora eats together.</p>
+    <div class="hero-actions">
+      <a href="#order" class="btn-primary">Order Online</a>
+      <a href="#menu" class="btn-outline">See the Menu</a>
+    </div>
+  </div>
+
+  <div class="hero-strip">
+    <div>
+      <span class="strip-label">Location</span>
+      <span class="strip-val">2020 9th St NW, Washington DC</span>
+    </div>
+    <div>
+      <span class="strip-label">Tonight's Hours</span>
+      <span class="strip-val" id="todayHours">2:00 PM – 3:00 AM</span>
+    </div>
+    <div>
+      <span class="strip-label">Closed</span>
+      <span class="strip-val">Never. Open 7 Days.</span>
+    </div>
+    <div>
+      <a href="https://wjla.com/good-morning-washington/small-business-spotlight/leslys-sport-bar-and-grill-spices-up-falls-church-with-virgin-islands-flavors"
+         target="_blank" rel="noopener noreferrer"
+         style="display:flex;align-items:center;gap:.65rem;text-decoration:none;border:1px solid rgba(200,146,26,.2);border-radius:2px;padding:.4rem .75rem;background:rgba(200,146,26,.05);transition:border-color .2s;"
+         onmouseover="this.style.borderColor='rgba(200,146,26,.4)'" onmouseout="this.style.borderColor='rgba(200,146,26,.2)'">
+        <img src="assets/media/leslys-sport-bar-grill-frame-end.jpg"
+             alt="Chef Mamadou Bah on Good Morning Washington"
+             style="width:42px;height:30px;object-fit:cover;border-radius:1px;flex-shrink:0;">
+        <div>
+          <span class="strip-label" style="color:var(--gold);">As Seen On</span>
+          <span class="strip-val" style="font-size:.78rem;">ABC 7 · Good Morning Washington →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FLASH DEAL -->
+<section id="flash">
+  <div class="flash-inner reveal">
+    <div class="flash-left">
+      <span class="flash-eyebrow">⚡ Tonight's Special</span>
+      <h3 class="flash-title">Jollof &amp; Oxtail — $38 · Tonight's Pick</h3>
+      <p class="flash-desc">Slow-braised oxtail on smoky party jollof. Six dollar savings, one night only. Order online or pull up before it's gone.</p>
+      <p class="flash-origin">"Oxtail stew came from necessity — the parts others left behind became the parts people fought over." — West African & Caribbean tradition</p>
+    </div>
+    <div class="flash-cta">
+      <div class="flash-timer" id="flashTimer">02:47:13</div>
+      <div class="flash-timer-label">Time remaining</div>
+      <a href="#order" class="btn-primary" style="display:block;text-align:center;margin-top:1rem;">Claim Deal</a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <span class="s-label">Find Us</span>
+  <h2 class="s-title">We're right here.<br>Every night.</h2>
+  <p class="s-sub">2020 9th Street NW, off Florida Ave and U Street. No reservations, no attitude — just walk in and eat.</p>
+
+  <div class="loc-grid">
+    <div class="map-embed reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.887!2d-77.0224!3d38.9171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7c9c5d5d5d5%3A0x0!2s2020+9th+St+NW%2C+Washington%2C+DC+20001!5e0!3m2!1sen!2sus!4v1"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Jollof &amp; Jerk location">
+      </iframe>
+    </div>
+
+    <div class="loc-info reveal rd1">
+      <div class="loc-card">
+        <div class="status-badge" id="statusBadge">
+          <span style="width:6px;height:6px;border-radius:50%;display:inline-block;" id="statusDot"></span>
+          <span id="statusText">Open Now</span>
+        </div>
+        <p class="loc-address-title">2020 9th Street NW</p>
+        <p class="loc-neighborhood">Shaw / U Street Corridor, Washington DC 20001</p>
+        <div class="hours-grid">
+          <div class="hr-row"><span class="hr-day">Mon – Thu</span><span class="hr-time">2:00 PM – 3:00 AM</span></div>
+          <div class="hr-row"><span class="hr-day">Fri – Sat</span><span class="hr-time">2:00 PM – 4:00 AM<span class="hr-special">Late Night</span></span></div>
+          <div class="hr-row"><span class="hr-day">Sunday</span><span class="hr-time">2:00 PM – 3:00 AM</span></div>
+        </div>
+        <div class="contact-row" style="margin-top:1.2rem;">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=2020+9th+St+NW+Washington+DC" target="_blank" class="contact-chip">Get Directions ↗</a>
+          <a href="mailto:jollofandjerkcatering@gmail.com" class="contact-chip">Email Us</a>
+          <a href="https://instagram.com/jollo_fandjerk" target="_blank" class="contact-chip">@jollo_fandjerk</a>
+        </div>
+      </div>
+      <a href="#order" class="btn-primary" style="text-align:center;display:block;">Order Online — Pick Up Fresh</a>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <span class="s-label">What We're Serving</span>
+  <h2 class="s-title">The Menu</h2>
+  <div class="menu-note">⭐ All mains come with your choice of 2 sides</div>
+
+  <div class="menu-tabs">
+    <button class="tab active" data-cat="mains">Mains</button>
+    <button class="tab" data-cat="sides">Sides & Extras</button>
+  </div>
+  <div class="menu-list reveal" id="menuList"></div>
+</section>
+
+<!-- ORDER ONLINE -->
+<section id="order">
+  <div class="order-grid">
+    <div class="reveal">
+      <span class="s-label">Skip the Line</span>
+      <h2 class="s-title">Order online.<br>Pick up fresh.</h2>
+      <p class="s-sub">Place your order before you arrive. We'll have it ready. Pay online, walk in, grab it, eat.</p>
+      <ul class="order-steps">
+        <li class="o-step">
+          <span class="step-num">01</span>
+          <div class="step-body"><strong>Build your plate</strong>Choose your main. Pick 2 sides. Add extras if you want.</div>
+        </li>
+        <li class="o-step">
+          <span class="step-num">02</span>
+          <div class="step-body"><strong>Pay securely online</strong>Card, Apple Pay, Google Pay. No fees, no surprises.</div>
+        </li>
+        <li class="o-step">
+          <span class="step-num">03</span>
+          <div class="step-body"><strong>Pull up & eat</strong>Your order is hot and ready when you walk in.</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="order-form reveal rd1" id="orderForm">
+      <p class="form-title">Place Your Order</p>
+      <p class="form-sub">Online ordering is launching soon. Drop your info and we'll text you the moment it goes live — plus a first-order discount.</p>
+      <div class="f-field"><label class="f-label">Name</label><input type="text" class="f-input" placeholder="Your name"></div>
+      <div class="f-row">
+        <div class="f-field"><label class="f-label">Phone</label><input type="tel" class="f-input" placeholder="(202) 555-0100"></div>
+        <div class="f-field"><label class="f-label">Email</label><input type="email" class="f-input" placeholder="you@email.com"></div>
+      </div>
+      <div class="f-field">
+        <label class="f-label">What are you ordering?</label>
+        <textarea class="f-textarea" placeholder="Jollof & Jerk with plantains and fries..."></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%;text-align:center;" onclick="submitOrder(this)">Notify Me When Live</button>
+      <p class="f-note">We'll text you first. You'll get a discount code for your first online order.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CATERING -->
+<section id="catering">
+  <div class="cat-grid">
+    <div class="reveal">
+      <span class="s-label">Events & Groups</span>
+      <h2 class="s-title">Feed the crowd right.</h2>
+      <p class="s-sub">Chef Mamadou Bah — Owner &amp; CEO of Jollof &amp; Jerk — has catered weddings, corporate events, and private dinners across the DMV. Executive-chef quality, direct from the source.</p>
+      <ul class="cat-points">
+        <li class="cat-point">
+          <span class="pt-num">01</span>
+          <div class="pt-body"><strong>Corporate & Office</strong>Team lunches, client events, appreciation dinners. Minimum 15 people. Full setup included.</div>
+        </li>
+        <li class="cat-point">
+          <span class="pt-num">02</span>
+          <div class="pt-body"><strong>Private Events</strong>Birthdays, graduations, celebrations. Buffet or plated — your call.</div>
+        </li>
+        <li class="cat-point">
+          <span class="pt-num">03</span>
+          <div class="pt-body"><strong>Large Groups & Buyouts</strong>Venue buyouts and large group dinners available. Ask us.</div>
+        </li>
+      </ul>
+      <a href="mailto:jollofandjerkcatering@gmail.com" class="btn-outline" style="display:inline-block;margin-top:2rem;">Email: jollofandjerkcatering@gmail.com</a>
+    </div>
+
+    <div class="cat-form reveal rd1">
+      <p style="font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;margin-bottom:.35rem;">Request a Quote</p>
+      <p style="font-size:.78rem;color:var(--muted);margin-bottom:1.4rem;line-height:1.6;">Tell us about your event. We respond within 24 hours.</p>
+      <div class="f-row">
+        <div class="f-field"><label class="f-label">First Name</label><input type="text" class="f-input" placeholder="First"></div>
+        <div class="f-field"><label class="f-label">Last Name</label><input type="text" class="f-input" placeholder="Last"></div>
+      </div>
+      <div class="f-field"><label class="f-label">Email</label><input type="email" class="f-input" placeholder="you@email.com"></div>
+      <div class="f-field"><label class="f-label">Phone</label><input type="tel" class="f-input" placeholder="(202) 555-0100"></div>
+      <div class="f-row">
+        <div class="f-field">
+          <label class="f-label">Event Type</label>
+          <select class="f-select">
+            <option value="">Select</option>
+            <option>Corporate / Office</option>
+            <option>Birthday / Celebration</option>
+            <option>Graduation</option>
+            <option>Venue Buyout</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="f-field"><label class="f-label">Guest Count</label><input type="number" class="f-input" placeholder="25"></div>
+      </div>
+      <div class="f-field"><label class="f-label">Event Date</label><input type="date" class="f-input"></div>
+      <div class="f-field"><label class="f-label">Tell us more</label><textarea class="f-textarea" placeholder="Any details, dietary needs, questions..."></textarea></div>
+      <button class="btn-primary" style="width:100%;text-align:center;" onclick="submitCatering(this)">Send Request</button>
+      <p class="f-note">Or email us directly: jollofandjerkcatering@gmail.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- STORY / CONTENT -->
+<section id="story">
+  <div class="story-grid">
+    <div class="reveal">
+      <span class="s-label">Where It Comes From</span>
+      <h2 class="story-pull">Every dish has a<br><em>story worth knowing.</em></h2>
+      <div class="story-body">
+        <p>Jollof rice has been fought over for generations — Ghana, Nigeria, Senegal all claim it. The real answer is it belongs to the diaspora. Mamadou grew up with it.</p>
+        <p>Jerk was born in Jamaica — the Maroons, escaped enslaved people who hid in the mountains, preserved the technique of smoking meat with pimento wood and scotch bonnet. It was survival food. Now it's one of the most beloved flavors on earth.</p>
+        <p>Before opening Jollof &amp; Jerk, Mamadou was Executive Chef at Lesly's Sport Bar &amp; Grill in Falls Church, VA — where his cooking caught the attention of <strong>ABC 7 News</strong>. Now he's doing it on his own terms, as Owner &amp; CEO.</p>
+        <p>Every plate at Jollof &amp; Jerk carries that history. We'll tell you the story every time we drop a special.</p>
+      </div>
+      <a href="https://wjla.com/good-morning-washington/small-business-spotlight/leslys-sport-bar-and-grill-spices-up-falls-church-with-virgin-islands-flavors"
+         target="_blank" rel="noopener noreferrer"
+         style="display:block;background:rgba(200,146,26,.06);border:1px solid rgba(200,146,26,.25);border-radius:3px;padding:1rem 1.25rem;margin-top:1.5rem;text-decoration:none;transition:border-color .2s;"
+         onmouseover="this.style.borderColor='rgba(200,146,26,.55)'" onmouseout="this.style.borderColor='rgba(200,146,26,.25)'">
+        <p style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 .3rem;">As Seen On</p>
+        <p style="font-size:.92rem;color:var(--text);margin:0;font-family:'Playfair Display',serif;font-weight:700;">ABC 7 News &mdash; Good Morning Washington</p>
+        <p style="font-size:.75rem;color:var(--muted);margin:.3rem 0 0;">Chef Mamadou Bah featured May 15, 2025 &mdash; jerk chicken &amp; oxtail. <span style="color:var(--gold);">Watch the segment →</span></p>
+      </a>
+      <div class="story-platforms">
+        <span class="plat-chip">Instagram</span>
+        <span class="plat-chip">TikTok</span>
+        <span class="plat-chip">SMS</span>
+        <span class="plat-chip">Email</span>
+      </div>
+      <a href="#alerts" class="btn-primary" style="display:inline-block;margin-top:1.75rem;">Get the Stories Delivered</a>
+    </div>
+
+    <div class="story-right reveal rd1">
+      <!-- ABC 7 NEWS SEGMENT — Good Morning Washington, May 15 2025 -->
+      <a href="https://wjla.com/good-morning-washington/small-business-spotlight/leslys-sport-bar-and-grill-spices-up-falls-church-with-virgin-islands-flavors"
+         target="_blank" rel="noopener noreferrer"
+         style="display:block;border-radius:3px;overflow:hidden;border:1px solid rgba(200,146,26,.2);position:relative;text-decoration:none;">
+        <img src="assets/media/leslys-sport-bar-grill-video-clip.gif"
+             alt="Chef Mamadou Bah and Owner Ricky Bartlette featured on ABC 7 News Good Morning Washington — May 15, 2025"
+             style="width:100%;display:block;aspect-ratio:16/9;object-fit:cover;">
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:.6rem .85rem;background:linear-gradient(0deg,rgba(8,12,7,.95) 0%,transparent 100%);">
+          <p style="font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin:0 0 .15rem;">As Seen On</p>
+          <p style="font-size:.8rem;font-family:'Playfair Display',serif;font-weight:700;color:var(--text);margin:0;">ABC 7 News · Good Morning Washington</p>
+          <p style="font-size:.68rem;color:var(--muted);margin:.15rem 0 0;">May 15, 2025 · Watch the segment →</p>
+        </div>
+      </a>
+      <div class="origin-card">
+        <p class="origin-dish">Jollof Rice</p>
+        <p class="origin-text">Named after the Jolof Empire of 14th-century Senegal. The dish traveled with the people — to Nigeria, Ghana, Liberia — and each country made it their own. Smoky party jollof is the West African celebration version.</p>
+        <p class="origin-flag">🌍 West Africa — Senegal · Nigeria · Ghana</p>
+      </div>
+      <div class="origin-card">
+        <p class="origin-dish">Jerk Chicken</p>
+        <p class="origin-text">Created by the Maroons of Jamaica in the Blue Mountains. The word "jerk" comes from the Quechua word "ch'arki" — dried meat. Scotch bonnet and allspice are the non-negotiables. Everything else is style.</p>
+        <p class="origin-flag">🇯🇲 Jamaica — Blue Mountains, 1600s</p>
+      </div>
+      <div class="origin-card">
+        <p class="origin-dish">Oxtail</p>
+        <p class="origin-text">Once dismissed as scraps — the cuts no one wanted. The African and Caribbean diaspora turned them into the most coveted dish on the menu. Slow-braised for hours. You can't rush it.</p>
+        <p class="origin-flag">🌍 Africa & Caribbean — Diaspora tradition</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RENDEZVOUS BAR -->
+<section id="rendezvous">
+  <div class="rnv-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
+
+      <div class="reveal">
+        <span class="rnv-eyebrow">Upstairs at</span>
+        <h2 class="rnv-title">Rendezvous</h2>
+        <p class="rnv-address">2020 9th St NW, Washington DC — Second Floor</p>
+        <div class="rnv-divider"></div>
+        <p class="rnv-sub">The bar above the kitchen. Get your plate downstairs, your drink upstairs. Two floors, one destination — right off U Street.</p>
+        <div class="rnv-features">
+          <div class="rnv-feature">
+            <p class="rnv-feat-title">Full Bar</p>
+            <p class="rnv-feat-desc">Cocktails, spirits, wine. Open late every night.</p>
+          </div>
+          <div class="rnv-feature">
+            <p class="rnv-feat-title">Late Night</p>
+            <p class="rnv-feat-desc">Fri &amp; Sat till 4AM. The neighborhood late-night spot.</p>
+          </div>
+          <div class="rnv-feature">
+            <p class="rnv-feat-title">Private Events</p>
+            <p class="rnv-feat-desc">Venue buyouts and private parties. Capacity: 149.</p>
+          </div>
+          <div class="rnv-feature">
+            <p class="rnv-feat-title">Food + Drinks</p>
+            <p class="rnv-feat-desc">Order Jollof &amp; Jerk downstairs. Drink upstairs.</p>
+          </div>
+        </div>
+        <div class="rnv-cta-row">
+          <a href="#catering" class="btn-bar-fill">Book the Venue</a>
+          <a href="#location" class="btn-bar">Get Directions</a>
+        </div>
+        <p class="rnv-partner-note">Rendezvous and Jollof &amp; Jerk operate independently but share the same address. Two experiences, one building.</p>
+      </div>
+
+      <div class="reveal rd1">
+        <div class="rnv-grid">
+          <div class="rnv-photo"><div class="rnv-photo-bg"><span class="rnv-photo-label">Bar photo</span></div></div>
+          <div class="rnv-photo"><div class="rnv-photo-bg"><span class="rnv-photo-label">Bar photo</span></div></div>
+          <div class="rnv-photo"><div class="rnv-photo-bg"><span class="rnv-photo-label">Bar photo</span></div></div>
+        </div>
+        <div style="background:rgba(138,122,74,.06);border:1px solid rgba(138,122,74,.15);border-radius:3px;padding:1.4rem 1.6rem;">
+          <p style="font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:#8A7A4A;margin:0 0 .6rem;">Rendezvous Bar Hours</p>
+          <div style="display:flex;flex-direction:column;gap:.4rem;">
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;"><span style="color:#4A4030;">Mon - Thu</span><span style="color:#EDE0C4;">Open late</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;"><span style="color:#4A4030;">Fri - Sat</span><span style="color:#C8B87A;">Until 4AM</span></div>
+            <div style="display:flex;justify-content:space-between;font-size:.8rem;"><span style="color:#4A4030;">Sunday</span><span style="color:#EDE0C4;">Open late</span></div>
+          </div>
+          <p style="font-size:.72rem;color:#352E22;margin:1rem 0 0;font-style:italic;">Exact bar hours vary — check Instagram for nightly updates.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SMS ALERTS -->
+<section id="alerts">
+  <div class="alerts-wrap reveal">
+    <span class="s-label">Stay in the Loop</span>
+    <h2 class="alerts-h2">Get the deal<br>and the <em>story</em> behind it.</h2>
+    <p class="alerts-sub">When Mamadou drops a special, you'll get a text — the dish, the origin story, the deal, and how long it lasts. That's it. No spam. Just food and history.</p>
+    <div class="sms-row">
+      <input type="tel" class="sms-in" id="smsIn" placeholder="(202) 555-0100">
+      <button class="sms-btn" onclick="submitSMS(this)">Text Me</button>
+    </div>
+    <p class="sms-proof">Every special comes with a story. Every story comes with a deal.</p>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section id="social">
+  <div class="social-head reveal">
+    <div>
+      <span class="s-label">Follow the Story</span>
+      <h2 class="s-title" style="font-size:2rem;">@jollo_fandjerk</h2>
+      <p style="font-size:.8rem;color:var(--muted);margin-top:.35rem;font-style:italic;">Up and coming chef · DC · Real food, real stories</p>
+    </div>
+    <a href="https://www.instagram.com/jollo_fandjerk" target="_blank" rel="noopener" class="ig-link">View on Instagram ↗</a>
+  </div>
+  <div class="ig-grid reveal">
+    <a class="ig-item" href="https://www.instagram.com/p/DMROw0hPs39/" target="_blank" rel="noopener">
+      <img src="assets/food/jerk-jollof-plate.jpg" alt="Jollof &amp; Jerk plate — jerk chicken, jollof rice, plantain, cabbage" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;">
+      <div class="ig-overlay"></div>
+      <span class="ig-dish">Jollof &amp; Jerk</span>
+    </a>
+    <a class="ig-item" href="https://www.instagram.com/p/DMRNlbpP2GG/" target="_blank" rel="noopener">
+      <img src="assets/food/smoke-oxtail.jpg" alt="Smoke oxtail with rice — Jollof &amp; Jerk" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;">
+      <div class="ig-overlay"></div>
+      <span class="ig-dish">Smoke Oxtail</span>
+    </a>
+    <a class="ig-item" href="https://www.instagram.com/p/DMRRixIvRQr/" target="_blank" rel="noopener">
+      <img src="assets/food/oxtail-closeup.jpg" alt="Oxtail closeup — catering quality from Jollof &amp; Jerk" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;">
+      <div class="ig-overlay"></div>
+      <span class="ig-dish">Wedding Catering</span>
+    </a>
+    <a class="ig-item" href="https://www.instagram.com/p/DMS44aaMQqb/" target="_blank" rel="noopener">
+      <img src="assets/food/jerk-plate-full.jpg" alt="Jerk chicken full plate — jollof, plantain, cabbage" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;">
+      <div class="ig-overlay"></div>
+      <span class="ig-dish">Health is Wealth</span>
+    </a>
+    <a class="ig-item" href="https://www.instagram.com/p/DMX5jkUsX6I/" target="_blank" rel="noopener">
+      <img src="assets/food/jerk-chicken-tray.jpg" alt="Jerk chicken tray — catering scale from Jollof &amp; Jerk" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s;">
+      <div class="ig-overlay"></div>
+      <span class="ig-dish">Smoke Jerk</span>
+    </a>
+    <a class="ig-item" href="https://wjla.com/good-morning-washington/small-business-spotlight/leslys-sport-bar-and-grill-spices-up-falls-church-with-virgin-islands-flavors" target="_blank" rel="noopener noreferrer">
+      <img src="assets/media/leslys-group-shot-clip-web.gif"
+           alt="Chef Mamadou Bah on ABC 7 News Good Morning Washington"
+           style="width:100%;height:100%;object-fit:cover;display:block;">
+      <div class="ig-overlay"></div>
+      <span class="ig-dish">ABC 7 News ✨</span>
+    </a>
+  </div>
+  <div class="ig-footer reveal" style="display:flex;align-items:center;justify-content:space-between;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid var(--border);flex-wrap:wrap;gap:1rem;">
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
+      <span style="font-size:.78rem;color:var(--muted);">18 posts</span>
+      <span style="font-size:.78rem;color:var(--muted);">Reels &amp; photos</span>
+      <span style="font-size:.78rem;color:var(--gold);font-style:italic;">ABC 7 News · Good Morning Washington ✨</span>
+      <span style="font-size:.78rem;color:var(--muted);">Wedding catering ✓</span>
+    </div>
+    <a href="https://www.instagram.com/jollo_fandjerk" target="_blank" rel="noopener" class="ig-link">Follow @jollo_fandjerk ↗</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-grid">
+    <div>
+      <span class="ft-logo">Jollof &amp; Jerk</span>
+      <p class="ft-tagline">West African jollof meets Caribbean jerk.<br>2020 9th St NW, Washington DC — Owner &amp; CEO: Mamadou Bah.</p>
+      <div style="margin-top:1rem;">
+        <a href="mailto:jollofandjerkcatering@gmail.com" style="font-size:.78rem;color:var(--muted);text-decoration:none;">jollofandjerkcatering@gmail.com</a>
+      </div>
+    </div>
+    <div>
+      <p class="ft-head">Navigate</p>
+      <ul class="ft-links">
+        <li><a href="#location">Find Us</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#order">Order Online</a></li>
+        <li><a href="#catering">Catering</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#rendezvous">Rendezvous Bar</a></li>
+        <li><a href="#alerts">Text Alerts</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="ft-head">Hours</p>
+      <ul class="ft-hrs">
+        <li class="ft-hr"><span>Mon – Thu</span><span>2PM – 3AM</span></li>
+        <li class="ft-hr"><span>Fri – Sat</span><span>2PM – 4AM<span class="ft-hr-note"> Late</span></span></li>
+        <li class="ft-hr"><span>Sunday</span><span>2PM – 3AM</span></li>
+      </ul>
+      <p class="ft-head" style="margin-top:1.4rem;">Connect</p>
+      <ul class="ft-links">
+        <li><a href="https://instagram.com/jollo_fandjerk" target="_blank">Instagram @jollo_fandjerk</a></li>
+        <li><a href="mailto:jollofandjerkcatering@gmail.com">Catering Email</a></li>
+        <li><a href="#alerts">SMS Alerts</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p class="ft-copy">© 2025 Jollof &amp; Jerk · Mamadou Bah, Owner &amp; CEO · Washington, DC 20001.</p>
+    <p class="ft-built">Built by <span>Rich Off Tech</span></p>
+  </div>
+</footer>
+
+<script>
+/* ── REAL MENU ── */
+const menu = {
+  mains:[
+    {
+      name:"Jollof & Jerk",
+      desc:"Smoky West African party jollof with Caribbean chargrilled jerk chicken. Two diasporas, one plate.",
+      origin:"Jolof Empire, Senegal (14th c.) meets Jamaica's Blue Mountains, 1600s.",
+      price:"$25",tag:"Signature",sides:true
+    },
+    {
+      name:"Jollof & Oxtail",
+      desc:"Slow-braised oxtail — hours in the pot — over the best jollof in DC.",
+      origin:"The cut no one wanted. The diaspora made it the most coveted on the table.",
+      price:"$38",tag:"Premium",sides:true
+    },
+    {
+      name:"Curry Chicken Rice & Peas",
+      desc:"Jamaican curry chicken over rice & peas. Sunday plate, any night of the week.",
+      origin:"Curry came to the Caribbean through South Asian workers in the 1800s. It stayed.",
+      price:"$26",tag:null,sides:true
+    },
+    {
+      name:"Chicken Fingers & Fries",
+      desc:"Crispy, seasoned right, served hot. The late-night classic.",
+      origin:null,
+      price:"$20",tag:null,sides:true
+    }
+  ],
+  sides:[
+    {name:"Jollof Rice",desc:"The star on its own. Smoky, tomato-based, made fresh.",origin:"West Africa",price:"$9",tag:null},
+    {name:"Plantain",desc:"Sweet fried plantain — ripe, caramelized, essential.",origin:"West Africa & Caribbean",price:"$7",tag:null},
+    {name:"Yuca",desc:"Cassava-based fry. Indigenous to the Americas, adopted everywhere.",origin:"Americas → Caribbean",price:"$7",tag:null},
+    {name:"Fries",desc:"Classic. Always fresh.",origin:null,price:"$7",tag:null},
+    {name:"Cabbage",desc:"Braised, seasoned West African style. Better than you expect.",origin:"West Africa",price:"$5",tag:null},
+    {name:"Beef Patties",desc:"Jamaican beef patties. Street food royalty. Flaky golden pastry.",origin:"Jamaica",price:"$6",tag:null},
+    {name:"Coco Bread",desc:"Jamaican coco bread. Soft, buttery, coconut-kissed. The official patty carrier.",origin:"Jamaica",price:"$6",tag:null}
+  ]
+};
+
+let cartCount = 0;
+
+function renderMenu(cat){
+  document.getElementById('menuList').innerHTML = menu[cat].map(i=>`
+    <div class="menu-item">
+      <div class="mi-info">
+        <p class="mi-name">${i.name}${i.tag?`<span class="mi-tag">${i.tag}</span>`:''}</p>
+        <p class="mi-desc">${i.desc}</p>
+        ${i.origin?`<p class="mi-origin">${i.origin}</p>`:''}
+      </div>
+      <div class="mi-right">
+        <span class="mi-price">${i.price}</span>
+        ${i.sides?`<span class="mi-sides">+ 2 sides</span>`:''}
+        <button class="add-btn" onclick="addToCart(this)">+ Add</button>
+      </div>
+    </div>
+  `).join('');
+}
+renderMenu('mains');
+
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    renderMenu(t.dataset.cat);
+  });
+});
+
+function addToCart(btn){
+  cartCount++;
+  document.getElementById('cartCount').textContent = cartCount;
+  btn.textContent = '✓ Added';
+  btn.style.background = '#1A5C2E';
+  setTimeout(()=>{btn.textContent='+ Add';btn.style.background='';},1500);
+}
+
+function scrollToOrder(){
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+}
+
+/* ── HOURS LOGIC ── */
+function getStatus(){
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun,1=Mon,...,5=Fri,6=Sat
+  const h = now.getHours();
+  const isWeekend = day===5||day===6; // Fri, Sat
+  const closeHour = isWeekend ? 4 : 3;
+  const isOpen = h>=14 || h<closeHour;
+  return {isOpen, isWeekend};
+}
+
+function updateStatus(){
+  const {isOpen,isWeekend} = getStatus();
+  const now = new Date();
+  const day = now.getDay();
+
+  // Today's hours display
+  const isWeekendHours = day===5||day===6;
+  const closeStr = isWeekendHours ? '4:00 AM' : '3:00 AM';
+  const el = document.getElementById('todayHours');
+  if(el) el.textContent = `2:00 PM – ${closeStr}`;
+
+  const label = isOpen ? 'Open Now' : 'Closed';
+  const openBg = 'rgba(26,92,46,.15)';
+  const openBorder = 'rgba(26,92,46,.3)';
+  const openColor = 'var(--green-text)';
+  const closedBg = 'rgba(196,52,26,.13)';
+  const closedBorder = 'rgba(196,52,26,.25)';
+  const closedColor = '#E06045';
+
+  const bg = isOpen?openBg:closedBg;
+  const border = isOpen?openBorder:closedBorder;
+  const color = isOpen?openColor:closedColor;
+  const dotColor = isOpen?'var(--green-text)':'#E06045';
+
+  // Hero badge
+  const hb = document.getElementById('heroBadge');
+  if(hb){hb.style.background=bg;hb.style.borderColor=border;hb.style.color=color;}
+  const hd = document.getElementById('heroDot');
+  if(hd) hd.style.background=dotColor;
+  const bt = document.getElementById('badgeText');
+  if(bt) bt.textContent=label;
+
+  // Status badge
+  const sb = document.getElementById('statusBadge');
+  if(sb){sb.style.background=bg;sb.style.borderColor=border;sb.style.color=color;}
+  const sd = document.getElementById('statusDot');
+  if(sd) sd.style.background=dotColor;
+  const st = document.getElementById('statusText');
+  if(st) st.textContent=label;
+}
+updateStatus();
+
+/* ── FLASH DEAL COUNTDOWN ── */
+function updateTimer(){
+  const now = new Date();
+  const midnight = new Date(now);
+  midnight.setHours(24,0,0,0);
+  const diff = midnight - now;
+  const h = Math.floor(diff/3600000);
+  const m = Math.floor((diff%3600000)/60000);
+  const s = Math.floor((diff%60000)/1000);
+  const el = document.getElementById('flashTimer');
+  if(el) el.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+}
+updateTimer();
+setInterval(updateTimer,1000);
+
+/* ── NAV ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>50);
+});
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('mobileNav').classList.add('open');
+});
+document.getElementById('mClose').addEventListener('click',()=>{
+  document.getElementById('mobileNav').classList.remove('open');
+});
+document.querySelectorAll('.m-link').forEach(l=>{
+  l.addEventListener('click',()=>document.getElementById('mobileNav').classList.remove('open'));
+});
+
+/* ── REVEAL ── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* ── FORMS ── */
+function submitOrder(btn){
+  btn.textContent="You're on the list — we'll text you first.";
+  btn.style.background='#1A5C2E';btn.disabled=true;
+}
+function submitCatering(btn){
+  btn.textContent="Sent ✓ We'll be in touch within 24 hours.";
+  btn.style.background='#1A5C2E';btn.disabled=true;
+}
+function submitSMS(btn){
+  const inp=document.getElementById('smsIn');
+  if(inp.value.replace(/\D/g,'').length<10){
+    inp.style.borderColor='var(--red)';
+    setTimeout(()=>inp.style.borderColor='',1500);return;
+  }
+  btn.textContent="You're In ✓";
+  btn.style.background='#1A5C2E';btn.disabled=true;inp.disabled=true;
+}
+</script>
+</body>
+</html>
