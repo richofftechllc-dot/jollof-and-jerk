@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Single-page marketing site for **Jollof & Jerk** — a West African / Caribbean restaurant at 2020 9th St NW, Washington DC. Owner & Chef: Mamadou Bah. Deployed on Vercel as a static site under team `team_nt4pW0uOQZNNe7TR9CF7PLwl` (project name `jollof-and-jerk`).
 
-The upstairs tenant **Rendezvous Lounge** (`@rendezvous_lounge_`) has its own dedicated section but is treated as a sibling business, not a sub-brand — copy/links must not conflate the two.
+The upstairs tenant **Rendezvous Lounge** (`@rendezvous_lounge_`) has its own dedicated section here but is also a separate codebase + Vercel project — see "Sibling project" below.
 
 ## Architecture
 
@@ -40,6 +40,16 @@ vercel --team team_nt4pW0uOQZNNe7TR9CF7PLwl --name jollof-and-jerk --prod    # p
 ```
 
 CLI is registered to `richofftechllc@gmail.com`. `DEPLOY.md` documents the dashboard and GitHub-integration paths as alternatives.
+
+## Sibling project: Rendezvous Lounge
+
+The upstairs business has its own static site, repo, and Vercel project. **Do not edit it from this repo, and do not copy assets between them — Mamadou's J&J photos are not Rendezvous's, and vice versa.**
+
+- **Local checkout:** `~/Desktop/rendezvous-lounge` (sibling to this repo)
+- **GitHub:** https://github.com/richofftechllc-dot/rendezvous-lounge (auto-deploys on push to `main`)
+- **Vercel:** `rotech/rendezvous-lounge` → https://rendezvous-lounge.vercel.app
+- **Shape:** same single-file static pattern as this repo (`index.html` + `vercel.json` + `assets/`).
+- **Cross-links:** the Rendezvous site links here (its `#food` section points at `https://jollof-and-jerk-chi.vercel.app`). This site's `#rendezvous` section currently only links to `@rendezvous_lounge_` on Instagram — when the Rendezvous domain or canonical URL is finalized, add a link to it here too.
 
 ## Known stubs / outstanding integrations
 
