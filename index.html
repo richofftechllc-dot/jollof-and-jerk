@@ -289,6 +289,63 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:3.5rem 
 /* ── CART DRAWER ── */
 .cart-icon{position:fixed;bottom:2rem;right:2rem;background:var(--red);color:#F2EAD5;border:none;width:56px;height:56px;border-radius:50%;font-size:.75rem;font-weight:500;cursor:pointer;z-index:150;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;box-shadow:0 4px 24px rgba(196,52,26,.35);transition:transform .2s;}
 .cart-icon:hover{transform:scale(1.05);}
+/* CART SYSTEM */
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:300;opacity:0;pointer-events:none;transition:opacity .25s;}
+.cart-overlay.open{opacity:1;pointer-events:auto;}
+.cart-drawer{position:fixed;top:0;right:0;height:100%;width:min(400px,92vw);background:#14110D;border-left:1px solid var(--border,rgba(242,234,213,.12));z-index:320;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;}
+.cart-drawer.open{transform:translateX(0);}
+.cart-head{display:flex;justify-content:space-between;align-items:center;padding:1.5rem;border-bottom:1px solid rgba(242,234,213,.1);}
+.cart-title{font-family:var(--ff-display,'Playfair Display',serif);font-size:1.4rem;color:#F2EAD5;margin:0;}
+.cart-x{background:none;border:none;color:#F2EAD5;font-size:1.8rem;cursor:pointer;line-height:1;opacity:.7;}
+.cart-x:hover{opacity:1;}
+.cart-items{flex:1;overflow-y:auto;padding:1rem 1.5rem;}
+.cart-empty{color:rgba(242,234,213,.45);text-align:center;margin-top:3rem;line-height:1.8;font-size:.9rem;}
+.cart-line{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(242,234,213,.08);}
+.cl-name{color:#F2EAD5;font-weight:600;margin:0 0 .2rem;font-size:.95rem;}
+.cl-sides{color:rgba(242,234,213,.5);font-size:.78rem;margin:0 0 .3rem;}
+.cl-price{color:var(--gold,#D4A23C);font-size:.9rem;margin:0;font-weight:600;}
+.cl-qty{display:flex;align-items:center;gap:.6rem;flex-shrink:0;}
+.cl-qty button{width:28px;height:28px;border-radius:50%;border:1px solid rgba(242,234,213,.3);background:none;color:#F2EAD5;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.cl-qty button:hover{background:var(--red,#C4341A);border-color:var(--red,#C4341A);}
+.cl-qty span{color:#F2EAD5;min-width:18px;text-align:center;}
+.cart-foot{padding:1.5rem;border-top:1px solid rgba(242,234,213,.1);}
+.cart-total-row{display:flex;justify-content:space-between;color:#F2EAD5;font-size:1.1rem;font-weight:600;margin-bottom:1rem;}
+.checkout-btn{width:100%;text-align:center;}
+/* SIDE MODAL */
+.side-modal{position:fixed;inset:0;z-index:340;display:none;align-items:center;justify-content:center;padding:1.5rem;}
+.side-modal.open{display:flex;}
+.side-card{background:#14110D;border:1px solid rgba(242,234,213,.15);border-radius:14px;padding:1.8rem;max-width:440px;width:100%;}
+.side-head{font-family:var(--ff-display,'Playfair Display',serif);font-size:1.3rem;color:#F2EAD5;margin:0 0 .2rem;}
+.side-head span{color:var(--gold,#D4A23C);}
+.side-sub{color:rgba(242,234,213,.5);font-size:.85rem;margin:0 0 1.2rem;}
+.side-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.4rem;}
+.side-pick{padding:.8rem;border:1px solid rgba(242,234,213,.25);background:none;color:#F2EAD5;border-radius:8px;cursor:pointer;font-size:.85rem;transition:all .15s;}
+.side-pick:hover{border-color:var(--gold,#D4A23C);}
+.side-pick.sel{background:var(--red,#C4341A);border-color:var(--red,#C4341A);color:#fff;}
+.side-actions{display:flex;gap:.8rem;}
+.side-cancel{flex:1;padding:.9rem;background:none;border:1px solid rgba(242,234,213,.25);color:#F2EAD5;border-radius:8px;cursor:pointer;}
+.side-actions .btn-primary{flex:2;text-align:center;}
+.side-actions .btn-primary:disabled{opacity:.4;cursor:not-allowed;}
+/* CHECKOUT SHEET */
+.checkout-sheet{position:fixed;bottom:0;left:50%;transform:translateX(-50%) translateY(100%);width:min(440px,100vw);background:#14110D;border:1px solid rgba(242,234,213,.15);border-radius:18px 18px 0 0;z-index:340;padding:1.8rem;transition:transform .3s cubic-bezier(.4,0,.2,1);}
+.checkout-sheet.open{transform:translateX(-50%) translateY(0);}
+.co-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;}
+.co-title{font-family:var(--ff-display,'Playfair Display',serif);font-size:1.4rem;color:#F2EAD5;margin:0;}
+.co-totals{background:rgba(242,234,213,.04);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.4rem;}
+.co-row{display:flex;justify-content:space-between;color:rgba(242,234,213,.7);font-size:.9rem;padding:.3rem 0;}
+.co-grand{color:#F2EAD5;font-size:1.15rem;font-weight:700;border-top:1px solid rgba(242,234,213,.12);margin-top:.4rem;padding-top:.7rem;}
+.co-pay-label{color:rgba(242,234,213,.5);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin:0 0 .8rem;}
+.pay-btn{width:100%;padding:1rem;border-radius:10px;border:none;font-size:1rem;font-weight:600;cursor:pointer;margin-bottom:.7rem;display:flex;align-items:center;justify-content:center;gap:.4rem;transition:transform .15s;}
+.pay-btn:hover{transform:scale(1.02);}
+.pay-apple{background:#fff;color:#000;}
+.pay-cashapp{background:#00D632;color:#fff;}
+.pay-card{background:#635BFF;color:#fff;}
+.co-secure{text-align:center;color:rgba(242,234,213,.4);font-size:.78rem;margin:1rem 0 0;}
+.pay-success{text-align:center;padding:1rem 0;}
+.pay-check{width:64px;height:64px;border-radius:50%;background:#1A5C2E;color:#fff;font-size:2rem;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;}
+.pay-success h3{font-family:var(--ff-display,'Playfair Display',serif);color:#F2EAD5;font-size:1.5rem;margin:0 0 .3rem;}
+.pay-method{color:var(--gold,#D4A23C);margin:0 0 1rem;}
+.pay-demo-note{color:rgba(242,234,213,.55);font-size:.82rem;line-height:1.6;background:rgba(242,234,213,.04);padding:.9rem;border-radius:8px;}
 .cart-count{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;line-height:1;}
 .cart-label{font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85;}
 
@@ -344,10 +401,58 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:3.5rem 
 </div>
 
 <!-- CART BUTTON -->
-<button class="cart-icon" id="cartBtn" onclick="scrollToOrder()" aria-label="Order now">
-  <span class="cart-count" id="cartCount">0</span>
-  <span class="cart-label">Order</span>
+<button class="cart-icon" id="cartBtn" onclick="openCart()" aria-label="View cart">
+  <span class="cart-count" id="cartCount" style="display:none;">0</span>
+  <span class="cart-label">🛒 Cart</span>
 </button>
+
+<!-- CART DRAWER + MODALS -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart();closeSide();closeCheckout();"></div>
+
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <p class="cart-title">Your Order</p>
+    <button class="cart-x" onclick="closeCart()">×</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="cart-total-row" id="cartTotalRow" style="display:none;">
+      <span>Subtotal</span><span id="cartTotal">$0.00</span>
+    </div>
+    <button class="btn-primary checkout-btn" id="checkoutBtn" style="display:none;" onclick="checkout()">Checkout →</button>
+  </div>
+</aside>
+
+<!-- SIDE PICKER MODAL -->
+<div class="side-modal" id="sideModal">
+  <div class="side-card">
+    <p class="side-head">Pick 2 sides for <span id="sideItemName"></span></p>
+    <p class="side-sub"><span id="sideCount">0</span> of 2 selected</p>
+    <div class="side-grid" id="sideGrid"></div>
+    <div class="side-actions">
+      <button class="side-cancel" onclick="closeSide()">Cancel</button>
+      <button class="btn-primary" id="confirmSide" onclick="confirmSide()" disabled>Add to Order</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKOUT SHEET (demo) -->
+<div class="checkout-sheet" id="checkoutSheet">
+  <div class="co-head">
+    <p class="co-title">Checkout</p>
+    <button class="cart-x" onclick="closeCheckout()">×</button>
+  </div>
+  <div class="co-totals">
+    <div class="co-row"><span>Subtotal</span><span id="coSubtotal">$0.00</span></div>
+    <div class="co-row"><span>Tax (DC ~10%)</span><span id="coTax">$0.00</span></div>
+    <div class="co-row co-grand"><span>Total</span><span id="coGrand">$0.00</span></div>
+  </div>
+  <p class="co-pay-label">Pay with</p>
+  <button class="pay-btn pay-apple" onclick="payDemo('Apple Pay')"> Pay</button>
+  <button class="pay-btn pay-cashapp" onclick="payDemo('Cash App Pay')">Cash App Pay</button>
+  <button class="pay-btn pay-card" onclick="payDemo('Card')">💳 Card / Debit</button>
+  <p class="co-secure">🔒 Secure checkout — pickup at 2020 9th St NW</p>
+</div>
 
 <!-- HERO -->
 <section id="hero">
@@ -497,19 +602,10 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:3.5rem 
     </div>
 
     <div class="order-form reveal rd1" id="orderForm">
-      <p class="form-title">Place Your Order</p>
-      <p class="form-sub">Online ordering is launching soon. Drop your info and we'll text you the moment it goes live — plus a first-order discount.</p>
-      <div class="f-field"><label class="f-label">Name</label><input type="text" class="f-input" placeholder="Your name"></div>
-      <div class="f-row">
-        <div class="f-field"><label class="f-label">Phone</label><input type="tel" class="f-input" placeholder="(202) 555-0100"></div>
-        <div class="f-field"><label class="f-label">Email</label><input type="email" class="f-input" placeholder="you@email.com"></div>
-      </div>
-      <div class="f-field">
-        <label class="f-label">What are you ordering?</label>
-        <textarea class="f-textarea" placeholder="Jollof & Jerk with plantains and fries..."></textarea>
-      </div>
-      <button class="btn-primary" style="width:100%;text-align:center;" onclick="submitOrder(this)">Notify Me When Live</button>
-      <p class="f-note">We'll text you first. You'll get a discount code for your first online order.</p>
+      <p class="form-title">Start Your Order</p>
+      <p class="form-sub">Browse the menu above, build your plate, and check out — card, Apple Pay, or Cash App. Ready for pickup at 2020 9th St NW.</p>
+      <button class="btn-primary" style="width:100%;text-align:center;" onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">🍛 Go to Menu &amp; Order</button>
+      <p class="f-note">Pickup only for now. We'll have it hot and ready when you walk in.</p>
     </div>
   </div>
 </section>
@@ -841,10 +937,13 @@ const menu = {
   ]
 };
 
-let cartCount = 0;
+/* ── CART STATE ── */
+let cart = [];
+const priceNum = s => parseFloat(String(s).replace('$',''));
+const SIDE_LIST = ["Jollof Rice","Plantain","Yuca","Fries","Cabbage","Beef Patties","Coco Bread"];
 
 function renderMenu(cat){
-  document.getElementById('menuList').innerHTML = menu[cat].map(i=>`
+  document.getElementById('menuList').innerHTML = menu[cat].map((i,idx)=>`
     <div class="menu-item">
       <div class="mi-info">
         <p class="mi-name">${i.name}${i.tag?`<span class="mi-tag">${i.tag}</span>`:''}</p>
@@ -854,7 +953,7 @@ function renderMenu(cat){
       <div class="mi-right">
         <span class="mi-price">${i.price}</span>
         ${i.sides?`<span class="mi-sides">+ 2 sides</span>`:''}
-        <button class="add-btn" onclick="addToCart(this)">+ Add</button>
+        <button class="add-btn" onclick="openAdd('${cat}',${idx})">+ Add</button>
       </div>
     </div>
   `).join('');
@@ -869,13 +968,116 @@ document.querySelectorAll('.tab').forEach(t=>{
   });
 });
 
-function addToCart(btn){
-  cartCount++;
-  document.getElementById('cartCount').textContent = cartCount;
-  btn.textContent = '✓ Added';
-  btn.style.background = '#1A5C2E';
-  setTimeout(()=>{btn.textContent='+ Add';btn.style.background='';},1500);
+/* ── ADD FLOW (side picker for mains) ── */
+let pendingSides = [];
+function openAdd(cat, idx){
+  const item = menu[cat][idx];
+  if(item.sides){
+    pendingSides = [];
+    document.getElementById('sideItemName').textContent = item.name;
+    document.getElementById('sideGrid').innerHTML = SIDE_LIST.map(s=>
+      `<button class="side-pick" onclick="toggleSide(this,'${s}')">${s}</button>`).join('');
+    document.getElementById('sideCount').textContent = 0;
+    document.getElementById('confirmSide').disabled = true;
+    document.getElementById('sideModal').dataset.cat = cat;
+    document.getElementById('sideModal').dataset.idx = idx;
+    document.getElementById('sideModal').classList.add('open');
+    document.getElementById('cartOverlay').classList.add('open');
+  } else {
+    cart.push({name:item.name, price:priceNum(item.price), sides:[], qty:1, id:Date.now()+Math.random()});
+    bumpCart();
+  }
 }
+function toggleSide(btn,s){
+  if(pendingSides.includes(s)){
+    pendingSides = pendingSides.filter(x=>x!==s);
+    btn.classList.remove('sel');
+  } else {
+    if(pendingSides.length>=2){ return; }
+    pendingSides.push(s);
+    btn.classList.add('sel');
+  }
+  document.getElementById('sideCount').textContent = pendingSides.length;
+  document.getElementById('confirmSide').disabled = pendingSides.length!==2;
+}
+function confirmSide(){
+  const m = document.getElementById('sideModal');
+  const item = menu[m.dataset.cat][m.dataset.idx];
+  cart.push({name:item.name, price:priceNum(item.price), sides:[...pendingSides], qty:1, id:Date.now()+Math.random()});
+  m.classList.remove('open');
+  document.getElementById('cartOverlay').classList.remove('open');
+  bumpCart();
+}
+function closeSide(){ document.getElementById('sideModal').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
+
+function bumpCart(){
+  const n = cart.reduce((a,c)=>a+c.qty,0);
+  const badge = document.getElementById('cartCount');
+  badge.textContent = n;
+  badge.style.display = n>0?'flex':'none';
+  renderCart();
+}
+
+/* ── CART DRAWER ── */
+function openCart(){ renderCart(); document.getElementById('cartDrawer').classList.add('open'); document.getElementById('cartOverlay').classList.add('open'); }
+function closeCart(){ document.getElementById('cartDrawer').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
+function changeQty(id,d){
+  const it = cart.find(c=>c.id==id);
+  if(!it) return;
+  it.qty += d;
+  if(it.qty<=0) cart = cart.filter(c=>c.id!=id);
+  bumpCart();
+}
+function cartTotal(){ return cart.reduce((a,c)=>a+c.price*c.qty,0); }
+function renderCart(){
+  const box = document.getElementById('cartItems');
+  if(cart.length===0){
+    box.innerHTML = '<p class="cart-empty">Your cart is empty.<br>Add a plate to get started.</p>';
+    document.getElementById('checkoutBtn').style.display='none';
+    document.getElementById('cartTotalRow').style.display='none';
+    return;
+  }
+  box.innerHTML = cart.map(c=>`
+    <div class="cart-line">
+      <div class="cl-info">
+        <p class="cl-name">${c.name}</p>
+        ${c.sides.length?`<p class="cl-sides">${c.sides.join(' · ')}</p>`:''}
+        <p class="cl-price">$${c.price.toFixed(2)}</p>
+      </div>
+      <div class="cl-qty">
+        <button onclick="changeQty('${c.id}',-1)">−</button>
+        <span>${c.qty}</span>
+        <button onclick="changeQty('${c.id}',1)">+</button>
+      </div>
+    </div>`).join('');
+  document.getElementById('checkoutBtn').style.display='block';
+  document.getElementById('cartTotalRow').style.display='flex';
+  document.getElementById('cartTotal').textContent = '$'+cartTotal().toFixed(2);
+}
+
+/* ── DEMO CHECKOUT (test mode — real-looking sheet, charges nothing) ── */
+function checkout(){
+  const total = cartTotal();
+  const tax = total*0.10;
+  const grand = total+tax;
+  document.getElementById('coSubtotal').textContent = '$'+total.toFixed(2);
+  document.getElementById('coTax').textContent = '$'+tax.toFixed(2);
+  document.getElementById('coGrand').textContent = '$'+grand.toFixed(2);
+  closeCart();
+  document.getElementById('checkoutSheet').classList.add('open');
+  document.getElementById('cartOverlay').classList.add('open');
+}
+function closeCheckout(){ document.getElementById('checkoutSheet').classList.remove('open'); document.getElementById('cartOverlay').classList.remove('open'); }
+function payDemo(method){
+  document.getElementById('checkoutSheet').innerHTML = `<div class="pay-success">
+    <div class="pay-check">✓</div>
+    <h3>Order Confirmed!</h3>
+    <p class="pay-method">Paid with ${method}</p>
+    <p class="pay-demo-note">🔧 DEMO MODE — no real charge made.<br>When Stripe is connected this is a real payment, and Mamadou gets a text the second it lands.</p>
+    <button class="btn-primary" style="width:100%;text-align:center;margin-top:1.2rem;" onclick="resetDemo()">Done</button>
+  </div>`;
+}
+function resetDemo(){ cart=[]; location.reload(); }
 
 function scrollToOrder(){
   document.getElementById('order').scrollIntoView({behavior:'smooth'});
