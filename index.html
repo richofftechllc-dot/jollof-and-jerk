@@ -5,6 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jollof & Jerk — Washington DC</title>
 <meta name="description" content="West African jollof meets Caribbean jerk. Restaurant & late-night spot at 2020 9th St NW, Washington DC. Owner & Chef: Mamadou Bah. As seen on ABC 7 News / Good Morning Washington. Open till 3AM daily, 4AM Fri & Sat.">
+<!-- Brand / favicon -->
+<link rel="icon" type="image/png" href="assets/brand/favicon.png">
+<link rel="apple-touch-icon" href="assets/brand/logo.png">
+<meta name="theme-color" content="#080C07">
+<!-- Social share -->
+<meta property="og:title" content="Jollof & Jerk — Washington DC">
+<meta property="og:description" content="West African jollof meets Caribbean jerk. 2020 9th St NW, Washington DC. Open late, every night.">
+<meta property="og:url" content="https://jollof-and-jerk-chi.vercel.app/">
+<meta property="og:image" content="https://jollof-and-jerk-chi.vercel.app/assets/brand/logo.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jollof-and-jerk-chi.vercel.app/assets/brand/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -32,7 +44,8 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',-apple-system,
 /* ── NAV ── */
 nav{position:fixed;top:0;width:100%;z-index:200;padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:background .3s;}
 nav.scrolled{background:rgba(8,12,7,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
-.nav-logo{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;font-style:italic;color:var(--red);text-decoration:none;}
+.nav-logo{display:flex;align-items:center;gap:.6rem;font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;font-style:italic;color:var(--red);text-decoration:none;}
+.nav-logo img{width:42px;height:42px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 2px 10px rgba(0,0,0,.5);}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
 .nav-links a{color:var(--muted);text-decoration:none;font-size:.72rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;transition:color .2s;}
 .nav-links a:hover{color:var(--text);}
@@ -259,6 +272,7 @@ section{padding:5.5rem 2rem;}
 /* ── FOOTER ── */
 footer{background:var(--card);border-top:1px solid var(--border);padding:3.5rem 2rem 2rem;}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3.5rem;margin-bottom:3rem;}
+.ft-logo-img{width:78px;height:78px;border-radius:50%;object-fit:cover;display:block;margin-bottom:.9rem;box-shadow:0 4px 18px rgba(0,0,0,.5);}
 .ft-logo{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;font-style:italic;color:var(--red);display:block;margin-bottom:.7rem;}
 .ft-tagline{font-size:.85rem;color:var(--muted);line-height:1.7;}
 .ft-head{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.9rem;}
@@ -380,7 +394,10 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:3.5rem 
 
 <!-- NAV -->
 <nav id="nav">
-  <a href="#" class="nav-logo">Jollof &amp; Jerk</a>
+  <a href="#" class="nav-logo">
+    <img src="assets/brand/logo.png" alt="Jollof &amp; Jerk Restaurant logo — a fist holding fresh peppers and herbs">
+    <span>Jollof &amp; Jerk</span>
+  </a>
   <ul class="nav-links">
     <li><a href="#location">Find Us</a></li>
     <li><a href="#menu">Menu</a></li>
@@ -868,6 +885,7 @@ footer{background:var(--card);border-top:1px solid var(--border);padding:3.5rem 
 <footer>
   <div class="ft-grid">
     <div>
+      <img class="ft-logo-img" src="assets/brand/logo.png" alt="Jollof &amp; Jerk Restaurant logo">
       <span class="ft-logo">Jollof &amp; Jerk</span>
       <p class="ft-tagline">West African jollof meets Caribbean jerk.<br>2020 9th St NW, Washington DC — Owner &amp; CEO: Mamadou Bah.</p>
       <div style="margin-top:1rem;">
